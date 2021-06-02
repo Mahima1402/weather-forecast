@@ -4,7 +4,7 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 const { createSecretKey } = require('crypto')
 const app = express()
-
+const port = process.env.PORT || 3000
 //Define paths for express config
 const public = path.join(__dirname,'./public')
 const partialsPath  = path.join(__dirname,'./partials')
@@ -70,6 +70,6 @@ app.get("*",(req,res)=>{
         name: "Mahima Pant"
     })
 })
-app.listen(3000,()=>{
-    console.log("Listening at port 3000")
+app.listen(port,()=>{
+    console.log("Listening at port "+port)
 })
